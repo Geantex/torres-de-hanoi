@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Torres_de_Hanoi
 {
+    // HE SUSTITUIDO LAS LISTS POR STACKS IMPORTANTE!!!
     class Pila
     {
         public int Size { get; set; }
@@ -35,14 +36,16 @@ namespace Torres_de_Hanoi
             Top = Elementos.Last().Valor;
         }
 
-        public void push(Disco d){
+        public bool push(Disco d){
             if(d.Valor > Elementos.Last().Valor){
                 Console.Write("No se puede hacer el push ");
+                return false;
             }
             else{
                 Elementos.Push(d);  //anyade el disco 
                 Size = Elementos.Count(); // Cuenta todos los eleementos 
                 Top = Elementos.Last().Valor; //selecciona el último elemento de la lista
+                return true;
             }
         }
 
