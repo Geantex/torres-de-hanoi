@@ -11,7 +11,8 @@ namespace Torres_de_Hanoi
         /*TODO: Implementar métodos*/
         public void mover_disco(Pila a, Pila b)
         {
-
+            // Pila a es la pila donde cogemos el disco, Pila b es donde lo dejamos
+                
         }
 
         public int iterativo(int n, Pila ini, Pila fin, Pila aux)
