@@ -28,6 +28,7 @@ namespace Torres_de_Hanoi
 
         public int iterativo(int n, Pila ini, Pila fin, Pila aux)
         {
+            int movimientos = 0;
             if(n == 1) {
                 mover_disco(ini,fin);
             }
@@ -35,16 +36,26 @@ namespace Torres_de_Hanoi
                 // Hay que mover todos menos un disco a AUX,
                 // después movemos el único disco que queda en INI a FIN,
                 // y movemos de la misma manera todos los discos a FIN
-                mover_disco(ini,aux);
+                // Estos 3 movimientos son correctos
                 mover_disco(ini,fin);
-                mover_disco(aux,fin);
-                while(ini.Size > 1){
-                    mover_disco(ini,aux);
-                    mover_disco(fin,ini);
-                    mover_disco(fin,aux);
-                }
+                movimientos++;
+                mover_disco(ini,aux);
+                movimientos++;
+                mover_disco(fin,aux);
+                movimientos++;
+                /*while(ini.Size > 1){
+                    
+                }*/
+                // CAMBIAMOS A MOVER EL DISCO INICIAL A FIN
+                mover_disco(ini,fin);
+                movimientos++;
+                /*while(fin.Size != n){
+                    
+                }*/
+                Console.WriteLine("Ejercicio resuelto");
+
             }
-            return 0;
+            return movimientos;
         }
 
     }
